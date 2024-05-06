@@ -1,6 +1,6 @@
 <template>
   <div class="todo-item">
-    <input type="checkbox" v-model="props.done" />
+    <input type="checkbox" v-model="props.done" @change="$emit('update', { task: props.task, done: props.done})" />
     <label>{{ task }}</label>
     <p>{{ description }}</p>
     <span v-if="props.done">Esta tarefa está concluída</span>
@@ -12,6 +12,9 @@ const props = defineProps<{
   done: boolean;
   description?: string;
 }>();
+
+defineEmits(["update"]);
+
 </script>
 <style scoped>
 .todo-item {
