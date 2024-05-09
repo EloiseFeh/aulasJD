@@ -9,6 +9,15 @@ export const getPokemonByName = async (pokemonName: string) => {
     }
 }
 
+export const getPokemonById = async (pokemonId: number) => {
+    try {
+        const response = await api.get(`pokemon/${pokemonId}`);
+        return response.data;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
 export const getAllPokemon = async () => {
     try {
         const response = await api.get(`pokemon?limit=151&offset=0`);

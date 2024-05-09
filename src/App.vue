@@ -1,8 +1,7 @@
 <template>
   <div class="">
-    <Pokedex />
+    <RouterView />
   </div>
 </template>
 <script setup lang="ts">
-import Pokedex from './pages/Pokedex.vue';
 </script>

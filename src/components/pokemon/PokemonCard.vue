@@ -41,14 +41,7 @@ onMounted(() => {
 <style scoped>
 .pokecard {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px;
-    width: 15%;
 }
 
 .base-info {
@@ -59,5 +52,6 @@ onMounted(() => {
 
 h2{
     text-transform: capitalize;
+
 }
 </style>

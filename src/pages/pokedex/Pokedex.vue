@@ -1,15 +1,20 @@
 <template>
     <div class="">
-      <InputText v-model="pokemon" placeholder="Busque um pokemon" @change="getTypedPokemon"/>
       <div class="container">
-        <PokemonCard
+        <RouterLink
         v-for="(pokemon, index) in pokemonsList"
         :key="index"
+        :to="{ name: 'PokemonPage', params: { id: index + 1}}"
+        class="router-link"
+        >
+        <PokemonCard
         :data="pokemon"
         :name="pokemon.name"
         :url="pokemon.url"
         :id="index + 1"
         />
+        </RouterLink>
+        
       </div>
     </div>
 </template>
@@ -46,5 +51,17 @@ onMounted(() => {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.router-link{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 15%;
 }
 </style>
