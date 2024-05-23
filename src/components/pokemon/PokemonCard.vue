@@ -1,5 +1,5 @@
 <template>
-    <div class="pokecard">
+    <div class="pokecard" :class="backGroundColor">
         <div class="image">
             <img :src="data.img">
         </div>
@@ -21,6 +21,8 @@ const props = defineProps<{
     id: number;
 }>();
 
+
+
 const data = ref<{
     img: string;
     types: string[];
@@ -29,12 +31,16 @@ const data = ref<{
     types: []
 });
 
+const backGroundColor = ref('')
+
 onMounted(() => {
     api.get(props.url).then((response: any) => {
         data.value = {
             img: response.data.sprites.front_default,
             types: response.data.types.map((type: any) => type.type.name)
         }
+
+        backGroundColor.value = `bg-${data.value.types[0]}`
     });
 });
 </script>

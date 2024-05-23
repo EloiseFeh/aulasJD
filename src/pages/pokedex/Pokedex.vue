@@ -38,6 +38,7 @@ const getPokemons = async () => {
   pokemonsList.value = response.results;
 }
 
+
 watch(pokemon, () => {
   getTypedPokemon();
 });

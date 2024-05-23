@@ -5,6 +5,8 @@
         <div>
             <label>Altura: </label> {{ pokemon.height }}m
         </div>
+
+       
     </div>
 </template>
 <script setup lang="ts">

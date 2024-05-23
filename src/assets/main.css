@@ -1,7 +1,10 @@
 @import "./base.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 #app {
-  padding: 2rem;
+  padding: 2rem ;
   font-weight: normal;
 }
 
